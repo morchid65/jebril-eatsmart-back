@@ -1,21 +1,20 @@
-# 🍕 EatSmart - Front-end
+# 🔌 EatSmart - Back-end (API)
 
-Interface web moderne pour la consultation de la carte d'un restaurant et la gestion d'un panier en temps réel.
+API REST développée en PHP pour gérer le catalogue d'articles du restaurant EatSmart.
 
-## 🚀 Fonctionnalités
-- **V1** : Maquette statique avec design responsive.
-- **V2** : Connexion à l'API PHP pour un affichage dynamique des produits.
-- **V3** : Gestion complète d'un panier (ajout, calcul du total, mise à jour de l'UI).
+## 📋 Pré-requis
+- WAMP / XAMPP / Laragon
+- MySQL / MariaDB
+- VirtualHost configuré : `eatsmart-back.local`
 
-## 🛠️ Tech Stack
-- **Framework** : Vite.js
-- **Langage** : TypeScript
-- **Style** : CSS3 (Flexbox/Grid)
+## 🗄️ Base de données
+Le script SQL de création est disponible dans le fichier `jebril_eatsmart.sql`.
+- **Nom de la base** : `eatsmart_db`
+- **Table** : `articles`
 
-## 📦 Installation
-1. Cloner le dépôt.
-2. Installer les dépendances : `npm install`
-3. Lancer le projet : `npm run dev`
+## 📡 Points d'accès (Endpoints)
+- `GET /index.php?page=articles` : Récupère tous les plats.
+- `GET /index.php?page=articles/id` : Récupère un plat spécifique.
 
-## 🔗 Lien API
-L'interface communique avec : `http://eatsmart-back.local/index.php?page=articles`
+## 🧪 Tests
+Une collection **Postman** (`articles.postman_collection.json`) est incluse à la racine pour tester les routes et valider les réponses JSON.
