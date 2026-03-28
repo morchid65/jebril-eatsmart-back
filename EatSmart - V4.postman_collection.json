@@ -1,0 +1,94 @@
+{
+  "info": {
+    "_postman_id": "147c4207-61f2-4e97-bd3e-141322f44b44",
+    "name": "EatSmart - V4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48519377",
+    "_collection_link": "https://go.postman.co/collection/48519377-147c4207-61f2-4e97-bd3e-141322f44b44?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "getAllArticles",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Response is valid JSON', function () {",
+              "    pm.response.to.be.json;",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://eatsmart-back.local/index.php?page=articles",
+          "protocol": "http",
+          "host": [
+            "eatsmart-back",
+            "local"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "articles"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCommande",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"date_commande\": \"2026-03-28 20:00:00\",\n  \"prix_total\": \"19.80\",\n  \"etat\": \"en cours\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://eatsmart-back.local/index.php?page=commandes",
+          "protocol": "http",
+          "host": [
+            "eatsmart-back",
+            "local"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "commandes"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
